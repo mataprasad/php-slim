@@ -16,9 +16,11 @@ class HomeController {
     public function hello(Request $request, Response $response,$args) {
         //var_dump($args);
         $data= $widgets = $this->db->table('emp')->get();
-        var_dump($data);
-        return $this->view->render($response, 'home/profile.php', [
-            "name" => "Michael"
+       // var_dump($data[0]);
+        return $this->view->render($response, 'home/data.php', [
+            "name" => "Michael",
+            "data"=>$data,
+            "layout"=>""
         ]);
     }
 }
